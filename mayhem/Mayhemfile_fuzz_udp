@@ -1,0 +1,9 @@
+project: savantenvs/shadowsocks-c
+target: fuzz_udp
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/fuzz_udp/testsuite
+cmds:
+  - cmd: /mayhem/build-mayhem-fuzz/out/fuzz_udp
+    libfuzzer: true
+    timeout: 5

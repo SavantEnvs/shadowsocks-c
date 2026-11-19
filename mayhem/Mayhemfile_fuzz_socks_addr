@@ -1,0 +1,9 @@
+project: savantenvs/shadowsocks-c
+target: fuzz_socks_addr
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/fuzz_socks_addr/testsuite
+cmds:
+  - cmd: /mayhem/build-mayhem-fuzz/out/fuzz_socks_addr
+    libfuzzer: true
+    timeout: 5
